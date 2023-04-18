@@ -9,7 +9,6 @@ class Portfolio():
         self.pf_value = pf_value
 
 
-
     # parameters: from date to date
     def get_pf_returns(self, from_date, to_date):
         df_joined = u.get_joined_returns(self.d_weights, from_date, to_date)
