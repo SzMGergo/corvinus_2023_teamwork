@@ -22,7 +22,6 @@ class Portfolio():
         filtered_df=u.get_joined_returns(self.d_weights, from_date, to_date)
         return filtered_df
 
-
     def calculate_var(
             self, vartype, l_conf_levels,
             from_date, to_date, window_in_days):

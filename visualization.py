@@ -62,10 +62,5 @@ plot_one_var_for_multiple_conf_level(
     show=True)
 
 
-def covar_visualization(valami):
-
-    pass
-
-#komment
 
 

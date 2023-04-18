@@ -179,6 +179,5 @@ def calc_var_for_period(vartype, pf_value, d_weights, l_conf_levels, from_date, 
 
     return df_result
 
-
 #valtozas2
 
