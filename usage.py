@@ -11,7 +11,9 @@ to_date = '2021-03-01'
 l_conf_levels = [0.95, 0.99]
 window_in_days = 250
 
+print(p1.get_pf_returns(from_date, to_date))
 
+print(p1.get_returns_of_etfs(from_date, to_date))
 # print(p1.get_pf_returns(from_date, to_date))
 # print(p1.get_returns_of_etfs(from_date, to_date))
 
