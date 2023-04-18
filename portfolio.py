@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import pandas as pd
 import utils as u
 import visualization as v
@@ -38,5 +39,6 @@ class Portfolio():
 
 #pd.plotting.scatter_matrix(df, alpha=0.2)
     def scatter_returns_of_etfs(self, from_date, to_date):
-        df=self.get_returns_of_etfs(self, from_date, to_date)
+        df = self.get_returns_of_etfs(from_date, to_date)
         pd.plotting.scatter_matrix(df, alpha=0.2)
+        plt.show()
