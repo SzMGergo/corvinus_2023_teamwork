@@ -15,24 +15,9 @@ class Portfolio():
         return pf_return
 
     # parameters: from date to date
-    def get_returns_of_etfs(etf_name,
-                        return_type='log', fieldname='Adj Close'):
-
-        df = u.read_etf_file(etf_name)
-        df = df[[fieldname]]
-
-        df['shifted'] = df.shift(1)
-        if return_type == 'log':
-            df['return'] = np.log(df[fieldname] / df['shifted'])
-        if return_type == 'simple':
-            df['return'] = df[fieldname] / df['shifted'] - 1
-
-        # restrict df to result col
-        df = df[['return']]
-        # rename column
-        df.columns = [etf_name]
-        # df = df.rename(by=col, {'return': etf_name})
-        return df
+    def get_returns_of_etfs(self, d_weights, from_date, to_date):
+        filtered_df=u.get_joined_returns(d_weights, from_date=None, to_date=None)
+        return filtered_df
 
 
     def calculate_var(self):

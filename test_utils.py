@@ -2,7 +2,6 @@ import unittest
 import utils as u
 
 class Sajat(unittest.TestCase):
-
     def test_calc_historical_var(self):
         d_weights = {'IEI': 0.6, 'VOO': 0.4}
         pf_value = 100000
