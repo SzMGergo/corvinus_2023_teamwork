@@ -1,6 +1,7 @@
 import utils as u
 import matplotlib.pyplot as plt
 
+
 def check_etf_price():
     etf = "VOO"
     df = u.read_etf_file(etf)
@@ -10,8 +11,9 @@ def check_etf_price():
 
 #check_etf_price()
 
-def test_return_calculation():
-    u.get_etf_return("VOO")
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 def test_dividend_return():
     df = u.get_dividend_return("VOO", "simple")
