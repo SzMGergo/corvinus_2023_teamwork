@@ -1,6 +1,7 @@
 import pandas as pd
 import utils as u
 import numpy as np
+import visualization as v
 
 class Portfolio():
 
@@ -34,3 +35,11 @@ class Portfolio():
 
     def plot_vars_for_conf_level(self):
         pass
+
+    def plot_one_var_for_multiple_conf_level(
+            self, vartype,
+            l_conf_levels, from_date, to_date, window_in_days):
+        v.plot_one_var_for_multiple_conf_level(
+            self.d_weights, self.pf_value, vartype, l_conf_levels,
+            from_date, to_date, window_in_days,
+            show=True)
