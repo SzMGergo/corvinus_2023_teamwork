@@ -2,6 +2,7 @@ import utils as u
 import matplotlib.pyplot as plt
 
 
+
 def check_etf_price():
     etf = "VOO"
     df = u.read_etf_file(etf)
