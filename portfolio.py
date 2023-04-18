@@ -11,29 +11,20 @@ class Portfolio():
 
     # parameters: from date to date
     def get_pf_returns(self, from_date, to_date):
-        pf_return = u.get_portfolio_return_btw_dates(self.d_weights, from_date, to_date)
+        pf_return = u.get_portfolio_return_btw_dates(
+            self.d_weights, from_date, to_date)
         return pf_return
 
     # parameters: from date to date
-    def get_returns_of_etfs(etf_name,
-                        return_type='log', fieldname='Adj Close'):
-
-        df = u.read_etf_file(etf_name)
-        df = df[[fieldname]]
-
-        df['shifted'] = df.shift(1)
-        if return_type == 'log':
-            df['return'] = np.log(df[fieldname] / df['shifted'])
-        if return_type == 'simple':
-            df['return'] = df[fieldname] / df['shifted'] - 1
-
-        # restrict df to result col
-        df = df[['return']]
-        # rename column
-        df.columns = [etf_name]
-        # df = df.rename(by=col, {'return': etf_name})
-        return df
-
-
-    def calculate_var(self):
+    def get_returns_of_etfs(self):
         pass
+
+
+    def calculate_var(
+            self, vartype, l_conf_levels,
+            from_date, to_date, window_in_days):
+        df_result = u.calc_var_for_period(
+            self.pf_value, self.d_weights,
+            vartype, l_conf_levels,
+            from_date, to_date, window_in_days)
+        return df_result
