@@ -36,4 +36,7 @@ class Portfolio():
         v.plot_multiple_vars_for_one_conf(self.d_weights, pf_value, conf_level,
                                                     from_date, to_date, window_in_days, show)
 
-
+#pd.plotting.scatter_matrix(df, alpha=0.2)
+    def scatter_returns_of_etfs(self, from_date, to_date):
+        df=self.get_returns_of_etfs(self, from_date, to_date)
+        pd.plotting.scatter_matrix(df, alpha=0.2)
