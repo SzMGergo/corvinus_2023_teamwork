@@ -15,8 +15,8 @@ class Portfolio():
         return pf_return
 
     # parameters: from date to date
-    def get_returns_of_etfs(self, d_weights, from_date, to_date):
-        filtered_df=u.get_joined_returns(d_weights, from_date, to_date)
+    def get_returns_of_etfs(self, from_date, to_date):
+        filtered_df=u.get_joined_returns(self.d_weights, from_date, to_date)
         return filtered_df
 
 
