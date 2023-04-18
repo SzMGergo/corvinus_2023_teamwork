@@ -25,8 +25,12 @@ class Portfolio():
     def calculate_var(
             self, vartype, l_conf_levels,
             from_date, to_date, window_in_days):
-        df_result = u.calc_var_for_period(
+        df_result = u.calc_var_for_period(vartype,
             self.pf_value, self.d_weights,
-            vartype, l_conf_levels,
+             l_conf_levels,
             from_date, to_date, window_in_days)
         return df_result
+
+
+    def plot_vars_for_conf_level(self):
+        pass
