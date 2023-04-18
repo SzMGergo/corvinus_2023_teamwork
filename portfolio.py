@@ -1,4 +1,5 @@
-
+import utils as u
+import numpy as np
 class Portfolio():
 
     def __init__(self, d_weights, pf_value):
@@ -14,7 +15,7 @@ class Portfolio():
     def get_returns_of_etfs(etf_name,
                         return_type='log', fieldname='Adj Close'):
 
-        df = read_etf_file(etf_name)
+        df = u.read_etf_file(etf_name)
         df = df[[fieldname]]
 
         df['shifted'] = df.shift(1)
