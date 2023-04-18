@@ -18,11 +18,11 @@ print(p1.get_returns_of_etfs(from_date, to_date))
 # print(p1.get_pf_returns(from_date, to_date))
 # print(p1.get_returns_of_etfs(from_date, to_date))
 
-print(p1.calculate_var(
-    vartype, l_conf_levels,
-    from_date, to_date, window_in_days))
+# print(p1.calculate_var(
+#     vartype, l_conf_levels,
+#     from_date, to_date, window_in_days))
 
-plot_vars_for_conf_level(self, pf_value, conf_level, from_date, to_date, window_in_days, show=True)
+p1.plot_vars_for_conf_level(0.99, from_date, to_date, window_in_days, show=True)
 
 p1.plot_one_var_for_multiple_conf_level(
     vartype, l_conf_levels,
