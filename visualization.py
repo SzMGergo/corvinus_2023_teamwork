@@ -1,6 +1,5 @@
 import utils as u
 import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
 
 
 def plot_multiple_vars_for_one_conf(

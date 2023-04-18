@@ -32,9 +32,9 @@ class Portfolio():
             from_date, to_date, window_in_days)
         return df_result
 
-
-    def plot_vars_for_conf_level(self):
-        pass
+    def plot_vars_for_conf_level(self, pf_value, conf_level, from_date, to_date, window_in_days, show=True):
+        v.plot_multiple_vars_for_one_conf(self.d_weights, pf_value, conf_level,
+                                                    from_date, to_date, window_in_days, show)
 
     def plot_one_var_for_multiple_conf_level(
             self, vartype,
@@ -43,3 +43,9 @@ class Portfolio():
             self.d_weights, self.pf_value, vartype, l_conf_levels,
             from_date, to_date, window_in_days,
             show=True)
+
+#pd.plotting.scatter_matrix(df, alpha=0.2)
+    def scatter_returns_of_etfs(self, from_date, to_date):
+        df = self.get_returns_of_etfs(from_date, to_date)
+        pd.plotting.scatter_matrix(df, alpha=0.2)
+        plt.show()

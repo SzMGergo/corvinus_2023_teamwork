@@ -5,7 +5,7 @@ pf_value = 100000
 p1 = p.Portfolio(d_weights, pf_value)
 print(p1.d_weights)
 
-vartype = 'covar'
+vartype = 'hist'
 from_date = '2020-03-01'
 to_date = '2021-03-01'
 l_conf_levels = [0.95, 0.99]
@@ -20,6 +20,8 @@ print(p1.get_returns_of_etfs(from_date, to_date))
 print(p1.calculate_var(
     vartype, l_conf_levels,
     from_date, to_date, window_in_days))
+
+plot_vars_for_conf_level(self, pf_value, conf_level, from_date, to_date, window_in_days, show=True)
 
 p1.plot_one_var_for_multiple_conf_level(
     vartype, l_conf_levels,
