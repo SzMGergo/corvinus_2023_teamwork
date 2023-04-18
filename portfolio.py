@@ -11,10 +11,8 @@ class Portfolio():
 
     # parameters: from date to date
     def get_pf_returns(self, from_date, to_date):
-        df_joined = u.get_joined_returns(self.d_weights, from_date, to_date)
-        df_weighted_returns = df_joined * pd.Series(self.d_weights)
-        s_portfolio_return = df_weighted_returns.sum(axis=1)
-        return pd.DataFrame(s_portfolio_return, columns=['pf'])
+        pf_return = u.get_portfolio_return_btw_dates(self.d_weights, from_date, to_date)
+        return pf_return
 
     # parameters: from date to date
     def get_returns_of_etfs(etf_name,
