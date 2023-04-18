@@ -20,3 +20,5 @@ print(p1.get_returns_of_etfs(from_date, to_date))
 print(p1.calculate_var(
     vartype, l_conf_levels,
     from_date, to_date, window_in_days))
+
+plot_vars_for_conf_level(self, pf_value, conf_level, from_date, to_date, window_in_days, show=True)
